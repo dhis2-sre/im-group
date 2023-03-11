@@ -3,9 +3,9 @@ kind: Config
 deploy:
   helm:
     releases:
-      - name: im-deployable-namespace-whoami
+      - name: im-group-whoami
         namespace: whoami
         createNamespace: true
-        chartPath: charts/im-deployable-namespace
+        chartPath: charts/im-group
 #        valuesFiles:
 #          - charts/core/values/dhis2.yaml

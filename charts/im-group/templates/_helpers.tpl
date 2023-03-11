@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "im-deployable-namespace.name" -}}
+{{- define "im-group.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "im-deployable-namespace.fullname" -}}
+{{- define "im-group.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "im-deployable-namespace.chart" -}}
+{{- define "im-group.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "im-deployable-namespace.labels" -}}
-helm.sh/chart: {{ include "im-deployable-namespace.chart" . }}
-{{ include "im-deployable-namespace.selectorLabels" . }}
+{{- define "im-group.labels" -}}
+helm.sh/chart: {{ include "im-group.chart" . }}
+{{ include "im-group.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,7 +45,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "im-deployable-namespace.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "im-deployable-namespace.name" . }}
+{{- define "im-group.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "im-group.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
