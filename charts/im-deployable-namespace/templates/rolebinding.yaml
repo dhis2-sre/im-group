@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "im-deployable-namespace.fullname" . }}
+  labels:
+    {{- include "im-deployable-namespace.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ .Values.serviceAccount.name }}
+    namespace: {{ .Values.serviceAccount.namespace }}
+roleRef:
+  kind: Role
+  name: {{ include "im-deployable-namespace.fullname" . }}
+  apiGroup: rbac.authorization.k8s.io

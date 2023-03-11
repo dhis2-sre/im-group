@@ -49,14 +49,3 @@ Selector labels
 app.kubernetes.io/name: {{ include "im-deployable-namespace.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "im-deployable-namespace.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "im-deployable-namespace.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}
