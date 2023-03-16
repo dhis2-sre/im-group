@@ -2,7 +2,6 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: {{ include "im-group.fullname" . }}
-  namespace: {{ .Values.namespace }}
   labels:
     {{- include "im-group.labels" . | nindent 4 }}
 rules:

@@ -1,3 +1,3 @@
-The service account "{{ .Values.serviceAccount.name }}.{{ .Values.serviceAccount.namespace }}" can now deploy to {{ .Values.namespace }}
+The service account "{{ .Values.serviceAccount.name }}.{{ .Values.serviceAccount.namespace }}" can now deploy to {{ .Release.Namespace }}
 
-NOTE: The group "{{ .Values.namespace }}" still needs to be created on IM with the relevant users added
+NOTE: The group "{{ .Release.Namespace }}" still needs to be created on IM with the relevant users added

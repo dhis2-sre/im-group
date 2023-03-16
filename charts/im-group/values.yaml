@@ -5,8 +5,6 @@
 nameOverride: ""
 fullnameOverride: ""
 
-namespace: whoami
-
 serviceAccount:
   name: im-manager-tons
   namespace: instance-manager-tons
