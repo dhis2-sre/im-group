@@ -29,8 +29,9 @@ to [this GitHub page](https://dhis2-sre.github.io/im-group/index.yaml).
 
 ### Release
 
+**NOTE: Do not create a tag yourself!**
+
 Bump the version in [Chart.yaml](./charts/im-group/Chart.yaml), commit and push.
-**NOTE: do not create a tag yourself!**
 
 Our release workflow will then using [Helm chart releaser action](https://github.com/helm/chart-releaser-action)
 
