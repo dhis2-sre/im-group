@@ -3,9 +3,11 @@ kind: Config
 deploy:
   helm:
     releases:
-      - name: im-group-whoami
-        namespace: whoami
+      - name: im-group-whoami-test # Make sure this name isn't used by an already installed chart since that would overwrite the role
+        namespace: whoami          # Name of namespace which the instance manager should be allowed to deploy to
         createNamespace: true
         chartPath: charts/im-group
-#        valuesFiles:
-#          - charts/core/values/dhis2.yaml
+        setValues:
+          serviceAccount:
+            name: im-manager-dev
+            namespace: instance-manager-dev
