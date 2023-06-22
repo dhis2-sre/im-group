@@ -3,6 +3,16 @@ entries:
   im-group:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-06-22T16:59:37.534388228Z"
+    description: A Helm chart for Kubernetes
+    digest: faef65855ed7763a4630070ec6e57cde821c5368cc2b0a3fad98e1b751e2cbad
+    name: im-group
+    type: application
+    urls:
+    - https://github.com/dhis2-sre/im-group/releases/download/im-group-0.3.0/im-group-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-03-16T04:39:04.115849288Z"
     description: A Helm chart for Kubernetes
     digest: 62ac8484add56256cf48220396468d2ce7ca98a309358f8f1549099f5d4358a6
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/dhis2-sre/im-group/releases/download/im-group-0.1.0/im-group-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-16T04:39:04.115860988Z"
+generated: "2023-06-22T16:59:37.534400529Z"
