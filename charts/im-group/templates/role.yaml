@@ -73,4 +73,5 @@ rules:
     verbs:
       - get
       - create
+      - patch
       - delete
